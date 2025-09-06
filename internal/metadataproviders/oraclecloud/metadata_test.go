@@ -57,7 +57,6 @@ func TestQueryEndpointCorrect(t *testing.T) {
 		RegionID:           "us-ashburn-1",
 		AvailabilityDomain: "AD-1",
 		Metadata: InstanceMetadata{
-			OKEClusterId:          "ocid1.cluster.oc1..bbbb",
 			OKEClusterDisplayName: "my-oke-cluster",
 		},
 	}

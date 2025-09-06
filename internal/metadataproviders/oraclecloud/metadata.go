@@ -54,7 +54,6 @@ type ComputeMetadata struct {
 }
 
 type InstanceMetadata struct {
-	OKEClusterId          string `json:"oke-cluster-id"`
 	OKEClusterDisplayName string `json:"oke-cluster-display-name"`
 }
 

@@ -75,7 +75,6 @@ func TestDetectDisabledResourceAttributes(t *testing.T) {
 			RegionID:           "us-ashburn-1",
 			AvailabilityDomain: "AD-1",
 			Metadata: oraclecloud.InstanceMetadata{
-				OKEClusterId:          "ocid1.cluster.oc1..bbbb",
 				OKEClusterDisplayName: "my-oke-cluster",
 			},
 		},
