@@ -9,6 +9,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	rdpmetadata "github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourcedetectionprocessor/internal/metadata"
 	"go.opentelemetry.io/collector/processor/processortest"
 	conventions "go.opentelemetry.io/otel/semconv/v1.30.0"
 
@@ -41,7 +42,7 @@ func TestDetect(t *testing.T) {
 	}
 	cfg := CreateDefaultConfig()
 
-	det, err := NewDetector(processortest.NewNopSettings(), cfg)
+	det, err := NewDetector(processortest.NewNopSettings(rdpmetadata.Type), cfg)
 	require.NoError(t, err)
 	det.(*Detector).provider = md
 
@@ -82,7 +83,7 @@ func TestDetectDisabledResourceAttributes(t *testing.T) {
 	cfg := CreateDefaultConfig()
 	cfg.ResourceAttributes.K8sClusterName.Enabled = false
 
-	det, err := NewDetector(processortest.NewNopSettings(), cfg)
+	det, err := NewDetector(processortest.NewNopSettings(rdpmetadata.Type), cfg)
 	require.NoError(t, err)
 	det.(*Detector).provider = md
 
