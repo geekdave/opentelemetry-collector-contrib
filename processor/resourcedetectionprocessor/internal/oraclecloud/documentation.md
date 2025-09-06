@@ -15,5 +15,4 @@
 | host.id | The host.id | Any Str | true |
 | host.name | The hostname | Any Str | true |
 | host.type | The instance type (shape) | Any Str | true |
-| k8s.cluster.id | The k8s.cluster.id | Any Str | true |
 | k8s.cluster.name | k8s.cluster.name | Any Str | true |

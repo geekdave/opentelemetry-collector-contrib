@@ -59,7 +59,6 @@ type InstanceMetadata struct {
 
 // Metadata queries a given endpoint and parses the output to the OracleCloud IMDS format
 func (p *oraclecloudProviderImpl) Metadata(ctx context.Context) (*ComputeMetadata, error) {
-
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, p.endpoint, nil)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create request: %w", err)
